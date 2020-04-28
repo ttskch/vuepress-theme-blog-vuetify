@@ -1,0 +1,64 @@
+@import 'variables';
+
+#content, #sidebar, #drawer {
+  margin-top: 1rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-top: $h-margin-top;
+    margin-bottom: $h-margin-bottom;
+    line-height: 1.4em;
+    small {
+      font-size: 0.6em;
+      color: #aaa;
+      margin-left: 0.2em;
+    }
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  blockquote {
+    border-left: 3px solid $color-grey-light;
+    color: $color-grey;
+    padding-left: 1em;
+  }
+
+  p > code {
+    background-color: $color-grey-light;
+    padding: 0.1rem 0.2rem;
+    margin: 0;
+    font-size: 0.85em;
+    font-family: $font-family-monospace;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    td, th {
+      border: 1px solid $color-grey-light;
+      padding: 0.5em 1em;
+    }
+  }
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.unstyled {
+      @include unstyled-link;
+    }
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}

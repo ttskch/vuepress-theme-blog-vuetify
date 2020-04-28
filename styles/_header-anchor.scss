@@ -1,0 +1,45 @@
+@import 'variables';
+
+#content {
+  h1, h2, h3, h4, h5, h6 {
+    &[id] {
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        height: $h-anchor-margin-top;
+        margin-top: -1 * $h-anchor-margin-top;
+      }
+
+      // #
+      & {
+        a.header-anchor {
+          font-size: 0.85em;
+          font-weight: normal;
+          position: absolute;
+          padding-right: 0.3em; // for click-ability
+          left: -0.8em;
+          opacity: 0;
+        }
+        &:hover {
+          a.header-anchor {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// prevent to cannot click under margin of h tags
+.v-app-bar, .v-navigation-drawer--open {
+  z-index: 100 !important;
+}
+#content {
+  a, details {
+    position: relative;
+    z-index: 99;
+  }
+}

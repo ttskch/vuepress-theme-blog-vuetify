@@ -1,0 +1,377 @@
+const removeMd = require('remove-markdown')
+const pick = require('lodash/pick')
+const defaultsDeep = require('lodash/defaultsDeep')
+
+module.exports = (option, ctx) => {
+
+  let { themeConfig, siteConfig } = ctx
+
+  /**
+   * Default theme configuration
+   */
+
+  themeConfig = defaultsDeep(themeConfig, {
+
+    // @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#directory-classifier
+    // @see https://vuepress-theme-blog.ulivz.com/config/#directories
+    directories: [
+      {
+        id: 'post',
+        dirname: '_posts',
+        path: '/',
+        title: '',
+        frontmatter: {
+          home: true,
+        },
+      },
+    ],
+
+    // @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#frontmatter-classifier
+    // @see https://vuepress-theme-blog.ulivz.com/config/#frontmatters
+    frontmatters: [
+      {
+        id: 'tag', // id: 'tag' is required
+        keys: ['tags'],
+        path: '/tag/',
+      },
+    ],
+
+    // @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#pagination
+    // @see https://vuepress-plugin-blog.ulivz.com/pagination/
+    // @see https://vuepress-theme-blog.ulivz.com/config/#globalpagination
+    globalPagination: {
+      sorter: (prev, next) => {
+        const dayjs = require('dayjs')
+        const prevTime = prev.frontmatter.date ? dayjs(prev.frontmatter.date) : dayjs(0)
+        const nextTime = next.frontmatter.date ? dayjs(next.frontmatter.date) : dayjs(0)
+        return nextTime - prevTime > 0 ? 1 : -1
+      },
+      lengthPerPage: 10,
+    },
+
+    sidebar: {
+      directoryIds: ['post'],
+      profile: {
+        avatar: '',
+        name: '',
+        subTitle: '',
+        descriptionHtml: '',
+      },
+      hotTags: 10,
+      recentPosts: 5,
+      additionalBlocks: [
+        // {
+        //   title: 'Pages',
+        //   links: [
+        //     { label: 'About', path: '/about' },
+        //     { label: 'Contact', path: '/contact' },
+        //     { label: 'External Page', url: 'https://example.com'}
+        //   ],
+        // },
+      ],
+    },
+
+    footer: {
+      links: [
+        // { label: 'About', path: '/about' },
+        // { label: 'Contact', path: '/contact' },
+        // { label: 'External Page', url: 'https://example.com'}
+      ],
+    },
+
+    sns: {
+      twitter: '',
+      facebook: '',
+      instagram: '',
+      github: '',
+      youtube: '',
+      feed: '/rss.xml',
+      order: [
+        'twitter',
+        'facebook',
+        'instagram',
+        'github',
+        'youtube',
+        'feed',
+      ],
+    },
+
+    seo: {
+      baseUrl: '',
+      author: '',
+      image: '',
+      fbAdmins: '',
+      fbAppId: '',
+      twitterSite: '',
+      twitterCreator: '',
+      articleDirectoryNames: [
+        '_posts',
+      ],
+    },
+
+    sitemap: true,
+
+    feed: {
+      rss: true,
+      atom: false,
+      json: false,
+    },
+
+    ga: '',
+
+    trackingTags: [
+      // { label: '', snippet: '', position: 'head or body'}, // you can exclude for each pages with specifying label in frontmatter.excludeTrackingTags array
+    ],
+
+    showImageOnHead: true,
+
+    summary: 200,
+
+    dateFormat: 'YYYY-MM-DD',
+  })
+
+  // this enables to access to global computed $themeConfig
+  // @see https://vuepress.vuejs.org/guide/global-computed.html#themeconfig
+  siteConfig.themeConfig = themeConfig
+
+  /**
+   * Configure vuepress-plugin-sitemap installed via @vuepress/plugin-blog
+   *
+   * @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#sitemap
+   * @see https://vuepress-theme-blog.ulivz.com/config/#sitemap
+   */
+
+  const sitemapPluginOptions = themeConfig.sitemap ? {
+    hostname: themeConfig.seo.baseUrl,
+  } : {}
+
+  /**
+   * Configure vuepress-plugin-feed installed via @vuepress/plugin-blog
+   *
+   * @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#feed
+   * @see https://vuepress-theme-blog.ulivz.com/config/#feed
+   */
+
+  let resolvedFeedOptions
+
+  if (themeConfig.feed.rss || themeConfig.feed.atom || themeConfig.feed.json) {
+    const {
+      rss,
+      atom,
+      json,
+      ...feedOptions
+    } = themeConfig.feed
+
+    resolvedFeedOptions = Object.assign({}, feedOptions, {
+      canonical_base: themeConfig.seo.baseUrl,
+      feeds: {
+        rss2: {enable: rss},
+        atom1: {enable: atom},
+        json1: {enable: json},
+      },
+    })
+  } else {
+    resolvedFeedOptions = {}
+  }
+
+  /**
+   * Configure @vuepress/plugin-blog
+   */
+
+  let defaultBlogPluginOptions = {
+    directories: themeConfig.directories,
+    frontmatters: themeConfig.frontmatters,
+    globalPagination: themeConfig.globalPagination,
+    sitemap: sitemapPluginOptions,
+    feed: resolvedFeedOptions,
+  }
+
+  /**
+   * Finish configuring @vuepress/plugin-blog
+   */
+
+  const blogPluginRelatedProperties = [
+    'directories',
+    'frontmatters',
+    'globalPagination',
+  ]
+  const themeConfigPluginOptions = {
+    ...pick(themeConfig, blogPluginRelatedProperties),
+  }
+
+  const blogPluginOptions = defaultsDeep(themeConfigPluginOptions, defaultBlogPluginOptions)
+
+  /**
+   * Configure vuepress-plugin-seo
+   *
+   * @see https://github.com/lorisleiva/vuepress-plugin-seo
+   */
+
+  const seoPluginOptions = {
+    siteTitle: (_, $site) => $site.title,
+    title: $page => $page.title,
+    description: $page => $page.frontmatter.description,
+    author: (_, $site) => $site.themeConfig.seo.author,
+    tags: $page => $page.frontmatter.tags,
+    twitterCard: _ => 'summary_large_image',
+    type: ($page, $site) => $site.themeConfig.seo.articleDirectoryNames.some(directoryName => $page.regularPath.startsWith('/' + directoryName)) ? 'article' : 'website',
+    url: (_, $site, path) => $site.themeConfig.seo.baseUrl + path,
+    image: ($page, $site) => $page.frontmatter.image || $site.themeConfig.seo.image,
+    publishedAt: $page => {
+      const dayjs = require('dayjs')
+      return $page.frontmatter.date && dayjs($page.frontmatter.date)
+    },
+    modifiedAt: $page => {
+      const dayjs = require('dayjs')
+      return $page.lastUpdated && dayjs($page.lastUpdated)
+    },
+    customMeta: (add, context) => {
+      const {
+        $site, $page, siteTitle, title, description, author, tags, twitterCard, type, url, image, publishedAt, modifiedAt,
+      } = context
+      if ($site.themeConfig.seo.fbAdmins) {
+        add('fb:admins', $site.themeConfig.seo.fbAdmins, 'property')
+      }
+      if ($site.themeConfig.seo.fbAppId) {
+        add('fb:app_id', $site.themeConfig.seo.fbAppId, 'property')
+      }
+      if ($site.themeConfig.seo.twitterSite) {
+        add('twitter:site', $site.themeConfig.seo.twitterSite)
+      }
+      if ($site.themeConfig.seo.twitterCreator) {
+        add('twitter:creator', $site.themeConfig.seo.twitterCreator)
+      }
+    },
+  }
+
+  /**
+   * Integrate plugins
+   */
+
+  let plugins = [
+    ['@vuepress/blog', blogPluginOptions],
+    '@vuepress/nprogress',
+    ['@vuepress/medium-zoom', {
+      selector: '#content article section :not(a) > img',
+    }],
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10,
+    }],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        const dayjs = require('dayjs')
+        dayjs.locale(lang)
+        return dayjs(timestamp)
+      },
+    }],
+    ['seo', seoPluginOptions],
+    ['container', {type: 'tip'}],
+    ['container', {type: 'warning'}],
+    ['container', {type: 'danger'}],
+    ['container', {
+      type: 'details',
+      before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
+      after: () => '</details>\n'
+    }],
+  ]
+
+  if (themeConfig.ga) {
+    plugins.push(['@vuepress/google-analytics', {
+      ga: themeConfig.ga,
+    }])
+  }
+
+  /**
+   * Extend page data
+   *
+   * @see https://vuepress.vuejs.org/plugin/option-api.html#extendpagedata
+   */
+
+  const pageDataExtender = page => {
+
+    /**
+     * Generate page summary
+     */
+
+    if (themeConfig.summary > 0) {
+      let content = page._strippedContent
+      if (!content) {
+        return
+      }
+
+      if (page.excerpt) {
+        content = content.replace(/([^]*)<!-- *more *-->[^]*/ig, "$1")
+      }
+
+      let summary = removeMd(content
+        .trim()
+        .replace(/:::/g, '') // remove custom container sign
+        .replace(/\[\[toc\]\]/ig, '') // remove [[toc]]
+        .replace(/\s+----*\s+\|\s+/g, ' | ') // remove table border
+        .replace(/\s+\|\s+----*\s+/g, ' | ') // remove table border
+      ).replace(/\s+/g, ' ')
+
+      if (page.excerpt) {
+        page.summary = summary + ' ...'
+      } else {
+        const postfix = summary.length > themeConfig.summary ? ' ...' : ''
+        page.summary = summary.slice(0, themeConfig.summary) + postfix
+      }
+
+      page.frontmatter.description = page.frontmatter.summary || page.summary
+    }
+
+    /**
+     * Resolve tags and excludeTrackingTags
+     */
+
+    let tags = page.frontmatter.tags
+    if (!tags) {
+      page.frontmatter.tags = []
+    } else if (!Array.isArray(tags)) {
+      page.frontmatter.tags = tags.split(/ +/)
+    }
+
+    page.frontmatter.excludeTrackingTags = page.frontmatter.excludeTrackingTags || []
+
+    /**
+     * Reduce toc header levels
+     */
+
+    if (page.headers) {
+      let minimumLevel = 6
+      page.headers.forEach(header => {
+        if (header.level < minimumLevel) {
+          minimumLevel = header.level
+        }
+      })
+      page.headers.forEach(header => {
+        header.reducedLevel = header.level - minimumLevel
+      })
+    }
+
+    /**
+     * Resolve lastUpdated
+     */
+
+    if (page.frontmatter.lastUpdated) {
+      page.lastUpdated = page.frontmatter.lastUpdated
+    }
+  }
+
+  /**
+   * Finish configuration
+   *
+   * @see https://vuepress.vuejs.org/config/
+   */
+
+  return {
+    plugins,
+    extendPageData: pageDataExtender,
+
+    // @see https://vuepress.vuejs.org/plugin/option-api.html#define
+    define: {
+      PAGINATION_COMPONENT_NAME: themeConfig.paginationComponent ? themeConfig.paginationComponent : 'VuetifyPagination',
+    },
+  }
+}
