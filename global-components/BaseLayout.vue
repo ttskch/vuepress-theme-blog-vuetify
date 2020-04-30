@@ -98,7 +98,6 @@
     },
     mounted() {
       window.addEventListener('resize', e => {
-        console.log(e instanceof UIEvent)
         if (!(e instanceof UIEvent)) {
           this.drawer = false
         }
