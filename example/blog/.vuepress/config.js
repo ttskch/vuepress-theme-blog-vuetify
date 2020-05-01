@@ -1,5 +1,4 @@
 module.exports = {
-  dest: '../../docs',
   title: 'vuepress-theme-blog-vuetify',
   description: '💥The world\'s most simple, beautiful and customizable 2 columns VuePress blog theme built with Vuetify',
   theme: 'blog-vuetify',
