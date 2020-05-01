@@ -21,8 +21,8 @@ module.exports = {
     },
     sns: {
       twitter: 'https://twitter.com/ttskch',
-      facebook: 'https://www.facebook.com/ttskch',
-      github: 'https://github.com/ttskch',
+      github: 'https://github.com/ttskch/vuepress-theme-blog-vuetify/',
+      feed: '',
     },
     seo: {
       baseUrl: 'https://vuepress-theme-blog-vuetify.ttskch.com',
