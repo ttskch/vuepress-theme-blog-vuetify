@@ -13,10 +13,18 @@ module.exports = {
         subTitle: 'Web Programmer',
         descriptionHtml: 'You can describe yourself here <strong>with html</strong>.',
       },
+      additionalBlocks: [
+        {
+          title: 'Pages',
+          links: [
+            { label: 'PROFILE', path: '/profile' },
+          ],
+        },
+      ],
     },
     footer: {
       links: [
-        { label: 'ABOUT', path: '/about' },
+        { label: 'PROFILE', path: '/profile' },
       ],
     },
     sns: {
