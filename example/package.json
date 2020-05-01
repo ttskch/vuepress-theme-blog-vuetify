@@ -1,0 +1,12 @@
+{
+  "name": "vuepress-theme-blog-vuetify-example",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "devDependencies": {
+    "vuepress": "^1.4.1",
+    "vuepress-theme-blog-vuetify": "^1.0.2"
+  }
+}

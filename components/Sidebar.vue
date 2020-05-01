@@ -9,8 +9,8 @@
           <img :src="profile.avatarUrl">
         </v-avatar>
         <div v-if="profile.name" class="d-flex flex-column justify-center">
-          <p class="mb-0"><strong class="name">{{ profile.name }}</strong></p>
-          <p class="mb-0 grey--text" style="font-size:0.9em">{{ profile.subTitle }}</p>
+          <p class="my-0"><strong class="name">{{ profile.name }}</strong></p>
+          <p class="my-0 grey--text" style="font-size:0.9em">{{ profile.subTitle }}</p>
         </div>
       </div>
       <p v-html="profile.descriptionHtml" class="mt-4 mb-0" />

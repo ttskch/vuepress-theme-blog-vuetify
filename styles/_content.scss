@@ -21,6 +21,13 @@
     margin-top: 0;
   }
 
+  p, ul, ol, table {
+    margin: $base-margin-y 0;
+    ul, ol {
+      margin: 0;
+    }
+  }
+
   img {
     max-width: 100%;
   }

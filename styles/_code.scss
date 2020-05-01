@@ -31,6 +31,7 @@
 
     pre[class*="language-"] {
       padding: $code-padding-y $code-padding-x;
+      @include reset-font;
 
       code {
         @include reset-font;

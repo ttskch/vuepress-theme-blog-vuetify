@@ -29,10 +29,16 @@ module.exports = (option, ctx) => {
     // @see https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#frontmatter-classifier
     // @see https://vuepress-theme-blog.ulivz.com/config/#frontmatters
     frontmatters: [
+      // id: 'tag' and id: 'author' are required
       {
-        id: 'tag', // id: 'tag' is required
+        id: 'tag',
         keys: ['tags'],
         path: '/tag/',
+      },
+      {
+        id: 'author',
+        keys: ['author'],
+        path: '/author/',
       },
     ],
 

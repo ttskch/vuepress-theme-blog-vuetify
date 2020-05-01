@@ -1,6 +1,6 @@
 <template>
   <div class="component-sns-links">
-    <ul class="d-flex" :style="{'font-size': fontSize}">
+    <ul class="my-0 d-flex" :style="{'font-size': fontSize}">
       <li v-for="item in sns" :style="{'margin-right': marginSize}">
         <a :href="item.url" target="_blank"><i :class="item.class"></i></a>
       </li>

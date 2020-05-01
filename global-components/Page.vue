@@ -67,12 +67,6 @@
     props: {
       page: Object,
     },
-    // data: () => ({
-    //   tags: [],
-    // }),
-    // created() {
-    //   this.tags = this.resolveTags(this.page.frontmatter.tags, this.$tag._metaMap)
-    // },
     computed: {
       tags() {
         return this.resolveTags(this.page.frontmatter.tags, this.$tag._metaMap)
