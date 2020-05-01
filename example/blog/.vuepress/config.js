@@ -25,7 +25,7 @@ module.exports = {
       github: 'https://github.com/ttskch',
     },
     seo: {
-      baseUrl: 'https://vuepress-theme-blog-vuetify.github.io',
+      baseUrl: 'https://vuepress-theme-blog-vuetify.ttskch.com',
       author: 'https://www.facebook.com/ttskch',
       image: 'https://tva1.sinaimg.cn/large/007S8ZIlgy1gece2yx70lj30zk0nnq7z.jpg',
       fbAppId: '186549258503363',
@@ -36,7 +36,7 @@ module.exports = {
         '_pages',
       ],
     },
-    // ga: 'UA-000000000-0',
+    ga: 'UA-156973649-4',
     trackingTags: [
       { label: 'addThis', snippet: `<!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575387ee08aaabea"></script>`, position: 'head'},
     ],
