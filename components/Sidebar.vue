@@ -4,7 +4,7 @@
 
     <SearchBox class="mb-5" />
 
-    <div v-if="profile.name" class="block profile">
+    <section v-if="profile.name" class="block profile">
       <h3 class="mt-0 mb-5">Profile</h3>
       <div class="d-flex">
         <v-avatar v-if="profile.avatarUrl" class="mr-3">
@@ -18,9 +18,9 @@
       <p v-html="profile.descriptionHtml" class="mt-4 mb-0" />
 
       <SnsLinks class="mt-1" />
-    </div>
+    </section>
 
-    <div v-if="hotTags.length" class="block tags">
+    <section v-if="hotTags.length" class="block tags">
       <div class="d-flex align-center mb-5">
         <h3 class="ma-0">Hot Tags</h3>
         <router-link to="/tag/" class="ml-3">See all</router-link>
@@ -33,18 +33,18 @@
       >
         {{ tag.key }}
       </v-chip>
-    </div>
+    </section>
 
-    <div v-if="recentPosts.length" class="block recent-posts">
+    <section v-if="recentPosts.length" class="block recent-posts">
       <h3 class="mt-0 mb-5">Recent Posts</h3>
       <ul>
         <li v-for="post in recentPosts">
           <router-link :to="post.path">{{ post.title }}</router-link>
         </li>
       </ul>
-    </div>
+    </section>
 
-    <div v-for="block in additionalBlocks" class="block additional-block">
+    <section v-for="block in additionalBlocks" class="block additional-block">
       <h3 class="mt-0 mb-5">{{ block.title }}</h3>
       <ul>
         <li v-for="link in block.links">
@@ -52,7 +52,7 @@
           <a v-else-if="link.url" :href="link.url" target="link.target">{{ link.label }}</a>
         </li>
       </ul>
-    </div>
+    </section>
 
     <component :is="afterSidebarComponent" />
   </div>
@@ -124,7 +124,7 @@
     padding: 0 $sidebar-padding-x;
     font-size: 0.95rem;
 
-    .block:not(:last-child) {
+    section.block:not(:last-of-type) {
       margin-bottom: 3em;
     }
 
