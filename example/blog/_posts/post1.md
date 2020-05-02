@@ -55,6 +55,10 @@ console.log('Hello, World');
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9x5zmkxaj32bc0rsmyp.jpg)
 
+Some vertically long images will be shown as compact automatically :+1:
+
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gee81rcg9hj30jc0zck3a.jpg)
+
 ## Custom containers
 
 ```
