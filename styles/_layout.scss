@@ -27,10 +27,12 @@ html[lang^="ja"] {
 }
 
 #content {
-  width: 100%;
+  word-wrap: break-word;
+  overflow-x: hidden;
 }
 
 #sidebar {
+  word-wrap: break-word;
   flex: 0 0 $sidebar-width + $sidebar-padding-x * 2;
   height: auto;
   margin-left: 24px;
