@@ -19,7 +19,10 @@
     </div>
 
     <div v-if="hotTags.length" class="block tags">
-      <h3 class="mt-0 mb-5">Hot Tags</h3>
+      <div class="d-flex align-center mb-5">
+        <h3 class="ma-0">Hot Tags</h3>
+        <router-link to="/tag/" class="ml-3">See all</router-link>
+      </div>
       <v-chip
         v-for="tag in hotTags"
         small
