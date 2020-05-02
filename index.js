@@ -363,6 +363,12 @@ module.exports = (option, ctx) => {
     if (page.frontmatter.lastUpdated) {
       page.lastUpdated = page.frontmatter.lastUpdated
     }
+
+    /**
+     * Render some html tags in page title
+     */
+
+    page.title = page.frontmatter.title.replace(/<([^>]*)>/g, "<$1>")
   }
 
   /**

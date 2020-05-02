@@ -1,5 +1,5 @@
 ---
-title: Soooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo long title
+title: "Sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo long title with some <html> <html> <html> tags"
 permalink: /test
 ---
 
