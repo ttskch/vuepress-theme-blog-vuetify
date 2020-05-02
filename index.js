@@ -208,6 +208,18 @@ module.exports = (option, ctx) => {
   const blogPluginOptions = defaultsDeep(themeConfigPluginOptions, defaultBlogPluginOptions)
 
   /**
+   * Configure @vuepress/plugin-search
+   *
+   * @see https://vuepress.vuejs.org/plugin/official/plugin-search.html
+   */
+
+  const searchPluginOptions = {
+    searchMaxSuggestions: themeConfig.searchMaxSuggestions || 10,
+    test: themeConfig.test || null,
+    searchHotkeys: themeConfig.searchHotkeys || ['s', '/'],
+  }
+
+  /**
    * Configure vuepress-plugin-seo
    *
    * @see https://github.com/lorisleiva/vuepress-plugin-seo
@@ -260,9 +272,7 @@ module.exports = (option, ctx) => {
     ['@vuepress/medium-zoom', {
       selector: '#content article section :not(a) > img',
     }],
-    ['@vuepress/search', {
-      searchMaxSuggestions: 10,
-    }],
+    ['@vuepress/search', searchPluginOptions],
     ['seo', seoPluginOptions],
     ['container', {type: 'tip'}],
     ['container', {type: 'warning'}],
