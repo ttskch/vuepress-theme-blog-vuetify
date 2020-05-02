@@ -6,7 +6,7 @@
         v-for="key in $frontmatterKey._metaMap"
         small
         :to="key.path"
-        class="unstyled mr-1 mb-1"
+        class="unstyled mr-3 mb-3"
       >
         {{ key.key }}
       </v-chip>

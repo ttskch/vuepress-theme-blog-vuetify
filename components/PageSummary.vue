@@ -84,12 +84,13 @@
   .component-page-summary {
     header {
       h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem !important;
         a {
           @include unstyled-link;
           &:hover {
             color: $color-brand !important;
           }
+          display: block;
         }
       }
       .metadata {

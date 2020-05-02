@@ -128,7 +128,7 @@ h6
 * List recent posts automatically
 * Scroll-spy TOC
 * SEO ready (perfect `<title>` and `<meta>` tags)
-* Mobile friendly<br><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gecog579w8j30u01szn1c.jpg" width="40%">
+* Mobile friendly<br><br>![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gecog579w8j30u01szn1c.jpg)
 
 ## Source of this page
 
