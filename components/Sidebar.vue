@@ -1,5 +1,7 @@
 <template>
   <div class="component-sidebar">
+    <component :is="beforeSidebarComponent" />
+
     <SearchBox class="mb-5" />
 
     <div v-if="profile.name" class="block profile">
@@ -51,10 +53,13 @@
         </li>
       </ul>
     </div>
+
+    <component :is="afterSidebarComponent" />
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
   import dayjs from 'dayjs'
   import reduce from 'lodash/reduce'
   import values from 'lodash/values'
@@ -67,12 +72,6 @@
       SearchBox,
       SnsLinks,
     },
-    data: () => ({
-      profile: {},
-      hotTags: [],
-      recentPosts: [],
-      additionalBlocks: [],
-    }),
     created() {
       // profile
       const profileValues = values(this.$themeConfig.sidebar.profile)
@@ -99,6 +98,21 @@
 
       // additional blocks
       this.additionalBlocks = this.$themeConfig.sidebar.additionalBlocks
+
+      this.beforeSidebarComponent = this.getBeforeSidebarComponent()
+      this.afterSidebarComponent = this.getAfterSidebarComponent()
+    },
+    data: () => ({
+      profile: {},
+      hotTags: [],
+      recentPosts: [],
+      additionalBlocks: [],
+      beforeSidebarComponent: null,
+      afterSidebarComponent: null,
+    }),
+    methods: {
+      getBeforeSidebarComponent: () => Vue.component(BEFORE_SIDEBAR_COMPONENT_NAME),
+      getAfterSidebarComponent: () => Vue.component(AFTER_SIDEBAR_COMPONENT_NAME),
     },
   }
 </script>

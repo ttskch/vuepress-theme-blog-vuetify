@@ -67,7 +67,7 @@
 
     <div id="tracking-tags">
       <!-- can be overwritten from Post -->
-      <slot v-for="trackingTag in this.$themeConfig.trackingTags" :name="`tracking-tag-${trackingTag.label}`">
+      <slot v-for="trackingTag in $themeConfig.trackingTags" :name="`tracking-tag-${trackingTag.label}`">
         <div v-html="trackingTag.snippet" />
       </slot>
     </div>
@@ -89,7 +89,6 @@
     methods: {
       navigate(path) {
         this.$router.push(path).catch(e => {
-
           if (e.name !== 'NavigationDuplicated') {
             throw e
           }

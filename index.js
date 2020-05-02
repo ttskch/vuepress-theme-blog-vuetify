@@ -134,6 +134,20 @@ module.exports = (option, ctx) => {
     summary: 200,
 
     dateFormat: 'YYYY-MM-DD',
+
+    components: {
+      pagination: 'VuetifyPagination',
+      beforeSidebar: 'DefaultBeforeSidebar',
+      afterSidebar: 'DefaultAfterSidebar',
+      beforeSticky: 'DefaultBeforeSticky',
+      afterSticky: 'DefaultAfterSticky',
+      beforePageList: 'DefaultBeforePageList',
+      beforePagination: 'DefaultBeforePagination',
+      afterPageList: 'DefaultAfterPageList',
+      beforePage: 'DefaultBeforePage',
+      beforePageSection: 'DefaultBeforePageSection',
+      afterPage: 'DefaultAfterPage',
+    },
   })
 
   // this enables to access to global computed $themeConfig
@@ -378,7 +392,17 @@ module.exports = (option, ctx) => {
 
     // @see https://vuepress.vuejs.org/plugin/option-api.html#define
     define: {
-      PAGINATION_COMPONENT_NAME: themeConfig.paginationComponent ? themeConfig.paginationComponent : 'VuetifyPagination',
+      PAGINATION_COMPONENT_NAME: themeConfig.components.pagination,
+      BEFORE_PAGE_LIST_COMPONENT_NAME: themeConfig.components.beforePageList,
+      BEFORE_PAGINATION_COMPONENT_NAME: themeConfig.components.beforePagination,
+      AFTER_PAGE_LIST_COMPONENT_NAME: themeConfig.components.afterPageList,
+      BEFORE_PAGE_COMPONENT_NAME: themeConfig.components.beforePage,
+      BEFORE_PAGE_SECTION_COMPONENT_NAME: themeConfig.components.beforePageSection,
+      AFTER_PAGE_COMPONENT_NAME: themeConfig.components.afterPage,
+      BEFORE_SIDEBAR_COMPONENT_NAME: themeConfig.components.beforeSidebar,
+      AFTER_SIDEBAR_COMPONENT_NAME: themeConfig.components.afterSidebar,
+      BEFORE_STICKY_COMPONENT_NAME: themeConfig.components.beforeSticky,
+      AFTER_STICKY_COMPONENT_NAME: themeConfig.components.afterSticky,
     },
   }
 }

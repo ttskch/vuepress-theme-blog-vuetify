@@ -1,9 +1,13 @@
 <template>
   <div class="component-page-list pb-12">
+    <component :is="beforePageListComponent" />
+
     <div v-for="page in pages">
       <PageSummary v-if="page.summary" :page="page" class="page-summary" />
       <Page v-else :page="page" class="page" />
     </div>
+
+    <component :is="beforePaginationComponent" />
 
     <component
       :is="paginationComponent"
@@ -11,13 +15,14 @@
       :pagination-component-name="paginationComponentName"
       class="d-flex justify-center mt-12"
     />
+
+    <component :is="afterPageListComponent" />
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
   import PageSummary from '@theme/components/PageSummary'
-  import VuetifyPagination from '@theme/components/Pagination'
 
   export default {
     components: {
@@ -26,24 +31,29 @@
     props: {
       pagination: Object,
     },
-    data: () => ({
-      paginationComponent: null,
-      paginationComponentName: PAGINATION_COMPONENT_NAME,
-    }),
-    methods: {
-      getPaginationComponent() {
-        // PAGINATION_COMPONENT_NAME
-        // @see ../index.js
-        return Vue.component(PAGINATION_COMPONENT_NAME) || VuetifyPagination
-      },
-    },
     created() {
       this.paginationComponent = this.getPaginationComponent()
+      this.beforePageListComponent = this.getBeforePageListComponent()
+      this.beforePaginationComponent = this.getBeforePaginationComponent()
+      this.afterPageListComponent = this.getAfterPageListComponent()
     },
     computed: {
       pages() {
         return this.pagination.pages
       },
+    },
+    data: () => ({
+      paginationComponentName: PAGINATION_COMPONENT_NAME, // just for correct styling
+      paginationComponent: null,
+      beforePageListComponent: null,
+      beforePaginationComponent: null,
+      afterPageListComponent: null,
+    }),
+    methods: {
+      getPaginationComponent: () => Vue.component(PAGINATION_COMPONENT_NAME),
+      getBeforePageListComponent: () => Vue.component(BEFORE_PAGE_LIST_COMPONENT_NAME),
+      getBeforePaginationComponent: () => Vue.component(BEFORE_PAGINATION_COMPONENT_NAME),
+      getAfterPageListComponent: () => Vue.component(AFTER_PAGE_LIST_COMPONENT_NAME),
     },
   }
 </script>

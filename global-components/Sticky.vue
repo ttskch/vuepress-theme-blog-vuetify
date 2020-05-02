@@ -1,12 +1,15 @@
 <template>
   <div class="component-sticky">
-    <slot name="before-toc" />
+    <component :is="beforeStickyComponent" />
+
     <Toc v-if="page" :page="page" />
-    <slot name="after-toc" />
+
+    <component :is="afterStickyComponent" />
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
   import Toc from '@theme/components/Toc'
 
   export default {
@@ -16,6 +19,18 @@
     props: {
       page: Object,
       require: false,
+    },
+    created() {
+      this.beforeStickyComponent = this.getBeforeStickyComponent()
+      this.afterStickyComponent = this.getAfterStickyComponent()
+    },
+    data: () => ({
+      beforeStickyComponent: null,
+      afterStickyComponent: null,
+    }),
+    methods: {
+      getBeforeStickyComponent: () => Vue.component(BEFORE_STICKY_COMPONENT_NAME),
+      getAfterStickyComponent: () => Vue.component(AFTER_STICKY_COMPONENT_NAME),
     },
   }
 </script>

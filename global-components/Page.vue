@@ -1,5 +1,7 @@
 <template>
   <article :key="page.key" class="component-page">
+    <component :is="beforePageComponent" />
+
     <header class="mb-12">
       <div class="metadata">
         <div class="d-flex">
@@ -46,17 +48,18 @@
       </div>
     </header>
 
+    <component :is="beforePageSectionComponent" />
+
     <section>
       <Content :page-key="page.key" />
     </section>
 
-    <footer class="my-12">
-      <slot name="footer" />
-    </footer>
+    <component :is="afterPageComponent" />
   </article>
 </template>
 
 <script>
+  import Vue from 'vue'
   import dayjs from 'dayjs'
   import TagResolver from '@theme/mixins/TagResolver'
 
@@ -67,15 +70,28 @@
     props: {
       page: Object,
     },
+    created() {
+      this.beforePageComponent = this.getBeforePageComponent()
+      this.beforePageSectionComponent = this.getBeforePageSectionComponent()
+      this.afterPageComponent = this.getAfterPageComponent()
+    },
     computed: {
       tags() {
         return this.resolveTags(this.page.frontmatter.tags, this.$tag._metaMap)
       },
     },
+    data: () => ({
+      beforePageComponent: null,
+      beforePageSectionComponent: null,
+      afterPageComponent: null,
+    }),
     methods: {
       resolvePostDate(date) {
         return dayjs(date).format(this.$themeConfig.dateFormat || 'YYYY/MM/DD')
       },
+      getBeforePageComponent: () => Vue.component(BEFORE_PAGE_COMPONENT_NAME),
+      getBeforePageSectionComponent: () => Vue.component(BEFORE_PAGE_SECTION_COMPONENT_NAME),
+      getAfterPageComponent: () => Vue.component(AFTER_PAGE_COMPONENT_NAME),
     },
   }
 </script>
