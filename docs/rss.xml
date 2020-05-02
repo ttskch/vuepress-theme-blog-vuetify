@@ -4,7 +4,7 @@
         <title>vuepress-theme-blog-vuetify</title>
         <link>https://vuepress-theme-blog-vuetify.ttskch.com</link>
         <description>💥The world&apos;s most simple, beautiful and customizable 2 columns VuePress blog theme built with Vuetify</description>
-        <lastBuildDate>Sat, 02 May 2020 10:06:36 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 May 2020 12:31:12 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <item>
@@ -25,10 +25,10 @@
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</guid>
-            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov li ...]]></description>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</guid>
+            <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit a ...]]></description>
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
@@ -39,10 +39,10 @@
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</guid>
-            <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit a ...]]></description>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</guid>
+            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov li ...]]></description>
         </item>
     </channel>
 </rss>
