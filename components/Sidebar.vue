@@ -119,6 +119,7 @@
 
       width: 100%;
       input {
+        font-size: 16px !important; // prevent zoom-up on smart phone
         width: 100%;
         background-position-y: center; // fix icon position
         color: $base-font-color;
@@ -144,6 +145,7 @@
       }
 
       .suggestions {
+        margin: -1px !important;
         z-index: 999;
         left: 0;
         a {
