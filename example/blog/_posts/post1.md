@@ -1,5 +1,5 @@
 ---
-title: 'Awesome VuePress blog theme :+1:'
+title: 'Awesome VuePress blog theme👍'
 date: 2020-04-01
 lastUpdated: 2020-04-02
 tags:
