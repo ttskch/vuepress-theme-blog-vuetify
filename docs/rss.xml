@@ -4,7 +4,7 @@
         <title>vuepress-theme-blog-vuetify</title>
         <link>https://vuepress-theme-blog-vuetify.ttskch.com</link>
         <description>💥The world&apos;s most simple, beautiful and customizable 2 columns VuePress blog theme built with Vuetify</description>
-        <lastBuildDate>Sat, 02 May 2020 09:32:35 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 May 2020 09:36:42 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <item>
@@ -18,10 +18,10 @@
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/02/post2/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/02/post2/</guid>
-            <pubDate>Mon, 02 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa ...]]></description>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/04/post4/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/04/post4/</guid>
+            <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, d ...]]></description>
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
@@ -32,17 +32,17 @@
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/04/post4/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/04/post4/</guid>
-            <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, d ...]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Just a dummy]]></title>
             <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</link>
             <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</guid>
             <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Just a dummy text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit a ...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Just a dummy]]></title>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/02/post2/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/02/post2/</guid>
+            <pubDate>Mon, 02 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa ...]]></description>
         </item>
     </channel>
 </rss>
