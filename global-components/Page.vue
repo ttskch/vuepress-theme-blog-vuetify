@@ -9,10 +9,10 @@
               {{ resolvePostDate(page.frontmatter.date) }}
             </time>
           </div>
-          <div v-if="page.lastUpdated" class="updated-at ml-3">
+          <div v-if="page.frontmatter.update" class="updated-at ml-3">
             <i class="fa fa-sync-alt"></i>
-            <time :datetime="page.lastUpdated">
-              {{ resolvePostDate(page.lastUpdated) }}
+            <time :datetime="page.frontmatter.update">
+              {{ resolvePostDate(page.frontmatter.update) }}
             </time>
           </div>
           <div v-if="page.frontmatter.author" class="author ml-3">

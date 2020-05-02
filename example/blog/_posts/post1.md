@@ -1,7 +1,7 @@
 ---
 title: 'Awesome VuePress blog theme👍'
 date: 2020-04-01
-lastUpdated: 2020-04-02
+update: 2020-04-02
 tags:
   - vue
   - vuepress

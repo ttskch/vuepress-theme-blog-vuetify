@@ -229,7 +229,7 @@ module.exports = (option, ctx) => {
     },
     modifiedAt: $page => {
       const dayjs = require('dayjs')
-      return $page.lastUpdated && dayjs($page.lastUpdated)
+      return $page.frontmatter.update && dayjs($page.frontmatter.update)
     },
     customMeta: (add, context) => {
       const {
@@ -262,13 +262,6 @@ module.exports = (option, ctx) => {
     }],
     ['@vuepress/search', {
       searchMaxSuggestions: 10,
-    }],
-    ['@vuepress/last-updated', {
-      transformer: (timestamp, lang) => {
-        const dayjs = require('dayjs')
-        dayjs.locale(lang)
-        return dayjs(timestamp)
-      },
     }],
     ['seo', seoPluginOptions],
     ['container', {type: 'tip'}],
@@ -354,14 +347,6 @@ module.exports = (option, ctx) => {
       page.headers.forEach(header => {
         header.reducedLevel = header.level - minimumLevel
       })
-    }
-
-    /**
-     * Resolve lastUpdated
-     */
-
-    if (page.frontmatter.lastUpdated) {
-      page.lastUpdated = page.frontmatter.lastUpdated
     }
 
     /**
