@@ -71,4 +71,11 @@
       pointer-events: none;
     }
   }
+
+  hr {
+    height: 1px;
+    border: none;
+    border-top: 1px solid $color-grey-light;
+    margin: $base-margin-y 0;
+  }
 }
