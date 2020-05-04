@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "vuepress dev blog",
-    "build": "vuepress build blog"
+    "build": "cp ../docs/CNAME /tmp/CNAME && vuepress build blog && cp /tmp/CNAME ../docs/CNAME"
   },
   "devDependencies": {
     "vuepress": "^1.4.1",
