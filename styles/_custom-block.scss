@@ -26,9 +26,11 @@ $color-details-bg: $color-grey-very-light;
 
       .custom-block-title {
         font-weight: bold;
+        margin: 0;
       }
 
       p:last-child {
+        margin-top: 0.7em;
         margin-bottom: 0;
       }
     }
