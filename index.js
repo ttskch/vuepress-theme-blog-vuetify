@@ -126,7 +126,7 @@ module.exports = (option, ctx) => {
 
     ga: '',
 
-    showImageOnHead: true,
+    showThumbnail: true,
 
     summary: 200,
 
