@@ -1,6 +1,14 @@
 module.exports = {
   title: 'vuepress-theme-blog-vuetify',
   description: '💥The world\'s most simple, beautiful and customizable 2 columns VuePress blog theme built with Vuetify',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', type: 'image/png' }],
+    ['script', { src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575387ee08aaabea' }],
+  ],
+  markdown: {
+    lineNumbers: true
+  },
   theme: 'blog-vuetify',
   themeConfig: {
     globalPagination: {
@@ -45,13 +53,7 @@ module.exports = {
       ],
     },
     ga: 'UA-156973649-4',
-    trackingTags: [
-      { label: 'addThis', snippet: `<!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575387ee08aaabea"></script>`, position: 'head'},
-    ],
     summary: 300,
     dateFormat: 'YYYY/MM/DD',
-  },
-  markdown: {
-    lineNumbers: true
   },
 }

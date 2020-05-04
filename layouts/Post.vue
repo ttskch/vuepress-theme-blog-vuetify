@@ -6,9 +6,6 @@
     <template #sticky>
       <Sticky :page="$page" />
     </template>
-    <template v-for="trackingTag in trackingTags" v-slot:[`tracking-tag-${trackingTag.label}`]>
-      <div v-if="excludeTrackingTagLabels.includes(trackingTag.label)"><!-- nop element --></div>
-    </template>
   </BaseLayout>
 </template>
 
@@ -20,7 +17,6 @@
     }),
     created() {
       this.trackingTags = this.$themeConfig.trackingTags
-      this.excludeTrackingTagLabels = this.$page.frontmatter.excludeTrackingTags
     },
   }
 </script>

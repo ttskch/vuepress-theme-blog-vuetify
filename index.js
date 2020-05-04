@@ -1,6 +1,7 @@
 const removeMd = require('remove-markdown')
 const pick = require('lodash/pick')
 const defaultsDeep = require('lodash/defaultsDeep')
+const cloneDeep = require('lodash/cloneDeep')
 
 module.exports = (option, ctx) => {
 
@@ -124,10 +125,6 @@ module.exports = (option, ctx) => {
     },
 
     ga: '',
-
-    trackingTags: [
-      // { label: '', snippet: '', position: 'head or body'}, // you can exclude for each pages with specifying label in frontmatter.excludeTrackingTags array
-    ],
 
     showImageOnHead: true,
 
@@ -345,7 +342,7 @@ module.exports = (option, ctx) => {
     }
 
     /**
-     * Resolve tags and excludeTrackingTags
+     * Resolve tags
      */
 
     let tags = page.frontmatter.tags
@@ -354,8 +351,6 @@ module.exports = (option, ctx) => {
     } else if (!Array.isArray(tags)) {
       page.frontmatter.tags = tags.split(/ +/)
     }
-
-    page.frontmatter.excludeTrackingTags = page.frontmatter.excludeTrackingTags || []
 
     /**
      * Reduce toc header levels
