@@ -310,6 +310,8 @@ module.exports = (option, ctx) => {
 
   validUserVariablesScssFileNames = ['variables.scss', '_variables.scss', 'palette.scss']
 
+  writeTemp('_variables.scss', '')
+
   for (fileName of validUserVariablesScssFileNames) {
     userVariablesScssFilePath = Path.resolve(sourceDir, `.vuepress/styles/${fileName}`)
     if (Fs.existsSync(userVariablesScssFilePath)) {
