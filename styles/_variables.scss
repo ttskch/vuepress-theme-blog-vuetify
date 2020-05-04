@@ -32,8 +32,10 @@ $color-link: $color-brand !default;
 $color-app-bar: $color-brand !default;
 $color-app-bar-title: #fff !default;
 
-$color-grey-very-light: map-get($grey, 'lighten-4');
-$color-grey-light: map-get($grey, 'lighten-2');
-$color-grey: map-get($grey, 'base');
-$color-grey-dark: map-get($grey, 'darken-1');
-$color-grey-very-dark: map-get($grey, 'darken-3');
+$color-grey-very-light: map-get($grey, 'lighten-4') !default;
+$color-grey-light: map-get($grey, 'lighten-2') !default;
+$color-grey: map-get($grey, 'base') !default;
+$color-grey-dark: map-get($grey, 'darken-1') !default;
+$color-grey-very-dark: map-get($grey, 'darken-3') !default;
+
+@import '~@vuepress/core/.temp/variables';

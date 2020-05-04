@@ -1,11 +1,12 @@
+const Path = require('path')
+const Fs = require('fs')
 const removeMd = require('remove-markdown')
 const pick = require('lodash/pick')
 const defaultsDeep = require('lodash/defaultsDeep')
-const cloneDeep = require('lodash/cloneDeep')
 
 module.exports = (option, ctx) => {
 
-  let { themeConfig, siteConfig } = ctx
+  let { themeConfig, siteConfig, sourceDir, writeTemp } = ctx
 
   /**
    * Default theme configuration
@@ -299,6 +300,20 @@ module.exports = (option, ctx) => {
     plugins.push(['@vuepress/google-analytics', {
       ga: themeConfig.ga,
     }])
+  }
+
+  /**
+   * Apply user variables.scss
+   */
+
+  validUserVariablesScssFileNames = ['variables.scss', '_variables.scss', 'palette.scss']
+
+  for (fileName of validUserVariablesScssFileNames) {
+    userVariablesScssFilePath = Path.resolve(sourceDir, `.vuepress/styles/${fileName}`)
+    if (Fs.existsSync(userVariablesScssFilePath)) {
+      writeTemp('_variables.scss', Fs.readFileSync(userVariablesScssFilePath))
+      break
+    }
   }
 
   /**
