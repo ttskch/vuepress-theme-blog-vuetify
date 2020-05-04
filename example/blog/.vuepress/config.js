@@ -14,6 +14,7 @@ module.exports = {
     globalPagination: {
       lengthPerPage: 3,
     },
+    titleHtml: `<i class="far fa-edit mr-2"></i><strong>vuepress-theme-blog-vuetify</strong>`,
     sidebar: {
       profile: {
         avatarUrl: 'https://avatars2.githubusercontent.com/u/4360663',

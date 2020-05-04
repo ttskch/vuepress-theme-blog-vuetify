@@ -11,9 +11,7 @@
           style="cursor:pointer"
           @click="navigate('/')"
         >
-          <div class="site-title">
-            <v-icon class="mr-2">mdi-pencil-circle</v-icon><strong>{{ $site.title }}</strong>
-          </div>
+          <div v-html="$themeConfig.titleHtml" class="site-title" />
         </v-toolbar-title>
         <v-btn
           class="d-block d-md-none"

@@ -3,7 +3,7 @@
 [![](https://img.shields.io/npm/v/vuepress-theme-blog-vuetify?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-blog-vuetify)
 [![](https://img.shields.io/npm/dm/vuepress-theme-blog-vuetify?style=flat-square)](https://www.npmjs.com/package/vuepress-theme-blog-vuetify)
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gegb5b4kn1j318x0u0n6x.jpg)
+![](https://user-images.githubusercontent.com/4360663/80946098-43781280-8e28-11ea-8e50-667344f9f959.png)
 
 💥The world's most simple, beautiful and customizable 2 columns [VuePress](https://vuepress.vuejs.org/) blog theme built with [Vuetify](https://vuetifyjs.com).
 

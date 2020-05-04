@@ -57,6 +57,8 @@ module.exports = (option, ctx) => {
       lengthPerPage: 10,
     },
 
+    titleHtml: `<strong>${siteConfig.title}</strong>`,
+
     sidebar: {
       directoryIds: ['post'],
       profile: {
