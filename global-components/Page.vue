@@ -43,7 +43,7 @@
         </v-chip>
       </div>
 
-      <div v-if="$themeConfig.showThumbnail && page.frontmatter.image && page.frontmatter.showThumbnail !== false" class="mt-4 thumbnail">
+      <div v-if="page.frontmatter.showThumbnail || ($themeConfig.showThumbnail && page.frontmatter.showThumbnail === undefined) && page.frontmatter.image" class="mt-4 thumbnail">
         <img :src="page.frontmatter.image" :alt="page.title">
       </div>
     </header>
