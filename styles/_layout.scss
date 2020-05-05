@@ -27,9 +27,11 @@ html[lang^="ja"] {
 }
 
 #content {
-  width: 100%;
+  width: calc(100% - #{$sidebar-width + $sidebar-padding-x * 2});
   word-wrap: break-word;
-  overflow-x: hidden;
+  @media (max-width: 960px) { // <= md
+    width: 100%;
+  }
 }
 
 #sidebar {
