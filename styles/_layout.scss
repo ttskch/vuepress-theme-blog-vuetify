@@ -26,19 +26,14 @@ html[lang^="ja"] {
   background-color: $color-app-bar !important;
 }
 
-#content {
-  width: calc(100% - #{$sidebar-width + $sidebar-padding-x * 2});
-  word-wrap: break-word;
-  @media (max-width: 960px) { // <= md
-    width: 100%;
-  }
-}
+$sidebar-outer-width: $sidebar-width + $sidebar-padding-x * 2;
+$sidebar-margin-left: 24px;
 
 #sidebar {
   word-wrap: break-word;
-  flex: 0 0 $sidebar-width + $sidebar-padding-x * 2;
+  flex: 0 0 $sidebar-outer-width;
   height: auto;
-  margin-left: 24px;
+  margin-left: $sidebar-margin-left;
 
   #sticky {
     margin-top: 2.5rem;
@@ -48,6 +43,14 @@ html[lang^="ja"] {
 }
 .v-navigation-drawer {
   width: $sidebar-width + $sidebar-padding-x * 2 !important;
+}
+
+#content {
+  width: calc(100% - #{$sidebar-outer-width + $sidebar-margin-left});
+  word-wrap: break-word;
+  @media (max-width: 960px) { // <= md
+    width: 100%;
+  }
 }
 
 // increase padding-x but make code block zero padding-x
