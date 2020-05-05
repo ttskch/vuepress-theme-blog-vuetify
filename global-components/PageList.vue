@@ -3,8 +3,7 @@
     <component :is="beforePageListComponent" />
 
     <div v-for="page in pages">
-      <PageSummary v-if="page.summary" :page="page" class="page-summary" />
-      <Page v-else :page="page" class="page" />
+      <PageSummary :page="page" class="page-summary" />
     </div>
 
     <component :is="beforePaginationComponent" />
