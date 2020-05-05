@@ -4,7 +4,6 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', type: 'image/png' }],
-    ['script', { src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575387ee08aaabea' }],
   ],
   markdown: {
     lineNumbers: true
@@ -17,7 +16,7 @@ module.exports = {
     titleHtml: `<i class="far fa-edit mr-2"></i><strong>vuepress-theme-blog-vuetify</strong>`,
     sidebar: {
       profile: {
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/4360663',
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/4360663?s=100',
         name: 'ttskch',
         subTitle: 'Web Programmer',
         descriptionHtml: 'You can describe yourself here <strong>with html</strong>.',
@@ -56,5 +55,8 @@ module.exports = {
     ga: 'UA-156973649-4',
     summary: 300,
     dateFormat: 'YYYY/MM/DD',
+    components: {
+      afterFooter: 'MyAfterFooter',
+    },
   },
 }
