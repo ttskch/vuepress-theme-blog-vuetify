@@ -147,6 +147,7 @@ module.exports = (option, ctx) => {
       beforePage: 'DefaultBeforePage',
       beforePageSection: 'DefaultBeforePageSection',
       afterPage: 'DefaultAfterPage',
+      afterFooter: 'DefaultAfterFooter',
     },
   })
 
@@ -416,6 +417,7 @@ module.exports = (option, ctx) => {
       AFTER_SIDEBAR_COMPONENT_NAME: themeConfig.components.afterSidebar,
       BEFORE_STICKY_COMPONENT_NAME: themeConfig.components.beforeSticky,
       AFTER_STICKY_COMPONENT_NAME: themeConfig.components.afterSticky,
+      AFTER_FOOTER_COMPONENT_NAME: themeConfig.components.afterFooter,
     },
   }
 }

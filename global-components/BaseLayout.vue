@@ -63,10 +63,13 @@
 
     <Footer />
 
+    <component :is="afterFooterComponent" />
+
   </v-app>
 </template>
 
 <script>
+  import Vue from 'vue'
   import Sidebar from '@theme/components/Sidebar'
   import Footer from '@theme/components/Footer'
 
@@ -75,17 +78,8 @@
       Sidebar,
       Footer,
     },
-    data: () => ({
-      drawer: false,
-    }),
-    methods: {
-      navigate(path) {
-        this.$router.push(path).catch(e => {
-          if (e.name !== 'NavigationDuplicated') {
-            throw e
-          }
-        })
-      },
+    created() {
+      this.afterFooterComponent = this.getAfterFooterComponent()
     },
     mounted() {
       window.addEventListener('resize', e => {
@@ -93,6 +87,20 @@
           this.drawer = false
         }
       })
+    },
+    data: () => ({
+      drawer: false,
+      afterFooterComponent: null,
+    }),
+    methods: {
+      getAfterFooterComponent: () => Vue.component(AFTER_FOOTER_COMPONENT_NAME),
+      navigate(path) {
+        this.$router.push(path).catch(e => {
+          if (e.name !== 'NavigationDuplicated') {
+            throw e
+          }
+        })
+      },
     },
   }
 </script>
