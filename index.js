@@ -346,8 +346,7 @@ module.exports = (option, ctx) => {
         .trim()
         .replace(/:::/g, '') // remove custom container sign
         .replace(/\[\[toc\]\]/ig, '') // remove [[toc]]
-        .replace(/\s+----*\s+\|\s+/g, ' | ') // remove table border
-        .replace(/\s+\|\s+----*\s+/g, ' | ') // remove table border
+        .replace(/(\|\s*:?-+:?\s*)+\|/g, '') // remove table border
       ).replace(/\s+/g, ' ')
 
       if (page.excerpt) {
