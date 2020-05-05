@@ -4,9 +4,16 @@
         <title>vuepress-theme-blog-vuetify</title>
         <link>https://vuepress-theme-blog-vuetify.ttskch.com</link>
         <description>💥The world&apos;s most simple, beautiful and customizable 2 columns VuePress blog theme built with Vuetify</description>
-        <lastBuildDate>Mon, 04 May 2020 07:59:53 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 05 May 2020 00:39:45 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+        <item>
+            <title><![CDATA[Just a dummy]]></title>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</guid>
+            <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit a ...]]></description>
+        </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
             <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/02/post2/</link>
@@ -25,10 +32,10 @@
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/03/post3/</guid>
-            <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit a ...]]></description>
+            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</link>
+            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</guid>
+            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a dummy text Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov li ...]]></description>
         </item>
         <item>
             <title><![CDATA[Just a dummy]]></title>
@@ -36,13 +43,6 @@
             <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/04/post4/</guid>
             <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Just a dummy text But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, d ...]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Just a dummy]]></title>
-            <link>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</link>
-            <guid>https://vuepress-theme-blog-vuetify.ttskch.com/2020/03/05/post5/</guid>
-            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Just a dummy text Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov li ...]]></description>
         </item>
     </channel>
 </rss>
