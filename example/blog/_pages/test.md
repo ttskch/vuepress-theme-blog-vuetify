@@ -26,3 +26,5 @@ test
 <hr>
 
 test
+
+[test `test` test](/)
