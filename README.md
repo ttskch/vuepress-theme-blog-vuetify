@@ -21,8 +21,6 @@ It has following features.
 
 👉 <https://vuepress-theme-blog-vuetify.ttskch.com/>
 
-## Features
-
 ## Installation
 
 ```bash
