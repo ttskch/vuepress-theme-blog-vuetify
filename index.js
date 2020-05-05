@@ -391,7 +391,7 @@ module.exports = (option, ctx) => {
      * Render some html tags in page title
      */
 
-    page.title = page.frontmatter.title.replace(/<([^>]*)>/g, "<$1>")
+    page.title = page.frontmatter.title && page.frontmatter.title.replace(/<([^>]*)>/g, "<$1>")
   }
 
   /**
