@@ -62,7 +62,7 @@ module.exports = (option, ctx) => {
     sidebar: {
       directoryIds: ['post'],
       profile: {
-        avatar: '',
+        avatarUrl: '',
         name: '',
         subTitle: '',
         descriptionHtml: '',
