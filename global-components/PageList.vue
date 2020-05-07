@@ -31,10 +31,11 @@
       pagination: Object,
     },
     created() {
-      this.paginationComponent = this.getPaginationComponent()
-      this.beforePageListComponent = this.getBeforePageListComponent()
-      this.beforePaginationComponent = this.getBeforePaginationComponent()
-      this.afterPageListComponent = this.getAfterPageListComponent()
+      this.paginationComponentName = this.$themeConfig.components.pagination
+      this.paginationComponent = Vue.component(this.$themeConfig.components.pagination)
+      this.beforePageListComponent = Vue.component(this.$themeConfig.components.beforePageList)
+      this.beforePaginationComponent = Vue.component(this.$themeConfig.components.beforePagination)
+      this.afterPageListComponent = Vue.component(this.$themeConfig.components.afterPageList)
     },
     computed: {
       pages() {
@@ -42,18 +43,12 @@
       },
     },
     data: () => ({
-      paginationComponentName: PAGINATION_COMPONENT_NAME, // just for correct styling
+      paginationComponentName: '', // just for correct styling
       paginationComponent: null,
       beforePageListComponent: null,
       beforePaginationComponent: null,
       afterPageListComponent: null,
     }),
-    methods: {
-      getPaginationComponent: () => Vue.component(PAGINATION_COMPONENT_NAME),
-      getBeforePageListComponent: () => Vue.component(BEFORE_PAGE_LIST_COMPONENT_NAME),
-      getBeforePaginationComponent: () => Vue.component(BEFORE_PAGINATION_COMPONENT_NAME),
-      getAfterPageListComponent: () => Vue.component(AFTER_PAGE_LIST_COMPONENT_NAME),
-    },
   }
 </script>
 

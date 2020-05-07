@@ -71,9 +71,9 @@
       page: Object,
     },
     created() {
-      this.beforePageComponent = this.getBeforePageComponent()
-      this.beforePageSectionComponent = this.getBeforePageSectionComponent()
-      this.afterPageComponent = this.getAfterPageComponent()
+      this.beforePageComponent = Vue.component(this.$themeConfig.components.beforePage)
+      this.beforePageSectionComponent = Vue.component(this.$themeConfig.components.beforePageSection)
+      this.afterPageComponent = Vue.component(this.$themeConfig.components.afterPage)
     },
     computed: {
       tags() {
@@ -89,9 +89,6 @@
       resolvePostDate(date) {
         return dayjs(date).format(this.$themeConfig.dateFormat || 'YYYY/MM/DD')
       },
-      getBeforePageComponent: () => Vue.component(BEFORE_PAGE_COMPONENT_NAME),
-      getBeforePageSectionComponent: () => Vue.component(BEFORE_PAGE_SECTION_COMPONENT_NAME),
-      getAfterPageComponent: () => Vue.component(AFTER_PAGE_COMPONENT_NAME),
     },
   }
 </script>

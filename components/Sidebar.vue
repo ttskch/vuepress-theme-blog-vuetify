@@ -99,8 +99,8 @@
       // additional blocks
       this.additionalBlocks = this.$themeConfig.sidebar.additionalBlocks
 
-      this.beforeSidebarComponent = this.getBeforeSidebarComponent()
-      this.afterSidebarComponent = this.getAfterSidebarComponent()
+      this.beforeSidebarComponent = Vue.component(this.$themeConfig.components.beforeSidebar)
+      this.afterSidebarComponent = Vue.component(this.$themeConfig.components.afterSidebar)
     },
     data: () => ({
       profile: {},
@@ -110,10 +110,6 @@
       beforeSidebarComponent: null,
       afterSidebarComponent: null,
     }),
-    methods: {
-      getBeforeSidebarComponent: () => Vue.component(BEFORE_SIDEBAR_COMPONENT_NAME),
-      getAfterSidebarComponent: () => Vue.component(AFTER_SIDEBAR_COMPONENT_NAME),
-    },
   }
 </script>
 

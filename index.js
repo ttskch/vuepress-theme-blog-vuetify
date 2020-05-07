@@ -403,21 +403,5 @@ module.exports = (option, ctx) => {
   return {
     plugins,
     extendPageData: pageDataExtender,
-
-    // @see https://vuepress.vuejs.org/plugin/option-api.html#define
-    define: {
-      PAGINATION_COMPONENT_NAME: themeConfig.components.pagination,
-      BEFORE_PAGE_LIST_COMPONENT_NAME: themeConfig.components.beforePageList,
-      BEFORE_PAGINATION_COMPONENT_NAME: themeConfig.components.beforePagination,
-      AFTER_PAGE_LIST_COMPONENT_NAME: themeConfig.components.afterPageList,
-      BEFORE_PAGE_COMPONENT_NAME: themeConfig.components.beforePage,
-      BEFORE_PAGE_SECTION_COMPONENT_NAME: themeConfig.components.beforePageSection,
-      AFTER_PAGE_COMPONENT_NAME: themeConfig.components.afterPage,
-      BEFORE_SIDEBAR_COMPONENT_NAME: themeConfig.components.beforeSidebar,
-      AFTER_SIDEBAR_COMPONENT_NAME: themeConfig.components.afterSidebar,
-      BEFORE_STICKY_COMPONENT_NAME: themeConfig.components.beforeSticky,
-      AFTER_STICKY_COMPONENT_NAME: themeConfig.components.afterSticky,
-      AFTER_FOOTER_COMPONENT_NAME: themeConfig.components.afterFooter,
-    },
   }
 }

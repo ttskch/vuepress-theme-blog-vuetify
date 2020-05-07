@@ -21,17 +21,13 @@
       require: false,
     },
     created() {
-      this.beforeStickyComponent = this.getBeforeStickyComponent()
-      this.afterStickyComponent = this.getAfterStickyComponent()
+      this.beforeStickyComponent = Vue.component(this.$themeConfig.components.beforeSticky)
+      this.afterStickyComponent = Vue.component(this.$themeConfig.components.afterSticky)
     },
     data: () => ({
       beforeStickyComponent: null,
       afterStickyComponent: null,
     }),
-    methods: {
-      getBeforeStickyComponent: () => Vue.component(BEFORE_STICKY_COMPONENT_NAME),
-      getAfterStickyComponent: () => Vue.component(AFTER_STICKY_COMPONENT_NAME),
-    },
   }
 </script>
 
