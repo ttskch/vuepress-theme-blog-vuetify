@@ -103,19 +103,11 @@ You can use emojis like `:+1:` :+1:
 
 ### h3
 
-h3
-
 #### h4
-
-h4
 
 ##### h5
 
-h5
-
 ###### h6
-
-h6
 
 ## About Markdown see also
 
