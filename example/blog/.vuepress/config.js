@@ -59,4 +59,5 @@ module.exports = {
       afterFooter: 'MyAfterFooter',
     },
   },
+  plugins: ['redirect-frontmatter'],
 }

@@ -5,6 +5,9 @@ date: 2020-04-01
 update: 2020-04-02
 image: https://tva1.sinaimg.cn/large/007S8ZIlgy1geconqacqij30zk0nnq4m.jpg
 showThumbnail: false
+redirectFrom:
+  - /test2
+  - /test3
 ---
 
 ## long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long heading
