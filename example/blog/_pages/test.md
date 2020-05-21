@@ -26,9 +26,10 @@ echo 'sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gee81rcg9hj30jc0zck3a.jpg)
 
-| test | test |
-| --- | --- |
-| `code` | `code` |
+| test | test | test | test | test |
+| --- | --- | --- | --- | --- |
+| `code` | `code` | `code` | `code` | `code` |
+| 日本語の短いテキスト | 日本語の短いテキスト | 日本語の短いテキスト | 日本語の短いテキスト | 日本語の短いテキスト |
 
 test
 
