@@ -10,6 +10,8 @@ redirectFrom:
   - /test3
 ---
 
+:::v-pre
+
 ## long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long heading
 
 test
@@ -42,3 +44,11 @@ test
 **test `test` test**
 
 *test `test` test*
+
+```
+{{ escape me }}
+```
+
+`{{ escape me }}`
+
+:::
