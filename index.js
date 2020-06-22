@@ -345,7 +345,7 @@ module.exports = (option, ctx) => {
 
       let summary = removeMd(content
         .trim()
-        .replace(/:::/g, '') // remove custom container sign
+        .replace(/:::.*(\n|$)/g, '') // remove custom container sign
         .replace(/\[\[toc\]\]/ig, '') // remove [[toc]]
         .replace(/(\|\s*:?-+:?\s*)+\|/g, '') // remove table border
       ).replace(/\s+/g, ' ')
