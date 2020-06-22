@@ -10,6 +10,14 @@ redirectFrom:
   - /test3
 ---
 
+::: tip
+test
+:::
+
+::: warning
+test
+:::
+
 :::v-pre
 
 ## long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long heading
