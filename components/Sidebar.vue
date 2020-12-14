@@ -8,7 +8,7 @@
       <h3 class="mt-0 mb-5">Profile</h3>
       <div class="d-flex">
         <v-avatar v-if="profile.avatarUrl" class="mr-3">
-          <img :src="profile.avatarUrl">
+          <img :src="profile.avatarUrl" alt="avatar">
         </v-avatar>
         <div v-if="profile.name" class="d-flex flex-column justify-center">
           <p class="my-0"><strong class="name">{{ profile.name }}</strong></p>
