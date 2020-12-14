@@ -2,7 +2,7 @@
   <div class="component-sns-links">
     <ul class="my-0 d-flex" :style="{'font-size': fontSize}">
       <li v-for="item in sns" :style="{'margin-right': marginSize}">
-        <a :href="item.url" target="_blank">
+        <a :href="item.url" target="_blank" rel="noopener noreferrer" :aria-label="item.type">
           <faIcon :icon="item.icon"></faIcon>
         </a>
       </li>

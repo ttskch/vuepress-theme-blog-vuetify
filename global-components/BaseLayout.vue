@@ -17,6 +17,7 @@
           class="d-block d-md-none"
           icon
           @click="drawer = !drawer"
+          aria-label="menu"
         >
           <v-icon>mdi-menu</v-icon>
         </v-btn>
