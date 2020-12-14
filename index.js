@@ -57,6 +57,7 @@ module.exports = (option, ctx) => {
       lengthPerPage: 10,
     },
 
+    titleIcon: null,
     titleHtml: `<strong>${siteConfig.title}</strong>`,
 
     sidebar: {

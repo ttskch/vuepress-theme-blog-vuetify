@@ -1,6 +1,8 @@
 import Vuetify from 'vuetify'
 import './styles/vuetify.css' // tweaked original css
 
+import '@mdi/font/scss/materialdesignicons.scss'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -35,11 +37,7 @@ export default ({
   siteData // site metadata
 }) => {
   Vue.use(Vuetify)
-  options.vuetify = new Vuetify({
-    icons: {
-      iconfont: "mdiSvg",
-    },
-  })
+  options.vuetify = new Vuetify()
 
   Vue.use(VueScrollactive)
 

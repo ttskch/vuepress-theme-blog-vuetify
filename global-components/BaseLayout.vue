@@ -11,7 +11,10 @@
           style="cursor:pointer"
           @click="navigate('/')"
         >
-          <div v-html="$themeConfig.titleHtml" class="site-title" />
+          <div class="site-title">
+            <v-icon v-if="$themeConfig.titleIcon">mdi-{{ $themeConfig.titleIcon }}</v-icon>
+            <span v-html="$themeConfig.titleHtml" />
+          </div>
         </v-toolbar-title>
         <v-btn
           class="d-block d-md-none"
