@@ -26,7 +26,6 @@
   "devDependencies": {},
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "@mdi/font": "^5.8.55",
     "@vuepress/plugin-blog": "^1.9.3",
     "@vuepress/plugin-google-analytics": "^1.7.1",
     "@vuepress/plugin-medium-zoom": "^1.7.1",
