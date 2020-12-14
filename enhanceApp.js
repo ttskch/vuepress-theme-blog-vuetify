@@ -1,6 +1,12 @@
 import Vuetify from 'vuetify'
 import './styles/vuetify.css' // tweaked original css
-import '@fortawesome/fontawesome-free/css/all.min.css'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(fab, fas, far)
 
 import VueScrollactive from 'vue-scrollactive'
 
@@ -42,6 +48,7 @@ export default ({
   Vue.component('Pagination', Pagination)
   Vue.component('SimplePagination', SimplePagination)
   Vue.component('VuetifyPagination', VuetifyPagination)
+  Vue.component('faIcon', FontAwesomeIcon)
 
   Vue.component('DefaultBeforeSidebar', DefaultBeforeSidebar)
   Vue.component('DefaultAfterSidebar', DefaultAfterSidebar)

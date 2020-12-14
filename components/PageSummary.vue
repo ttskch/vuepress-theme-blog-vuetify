@@ -4,20 +4,20 @@
       <div class="metadata">
         <div class="d-flex">
           <div v-if="page.frontmatter.date" class="published-at">
-            <i class="fa fa-clock"></i>
+            <faIcon icon="clock" />
             <time :datetime="page.frontmatter.date">
               {{ resolvePostDate(page.frontmatter.date) }}
             </time>
           </div>
           <div v-if="page.frontmatter.update" class="updated-at ml-3">
-            <i class="fa fa-sync-alt"></i>
+            <faIcon icon="sync-alt" />
             <time :datetime="page.frontmatter.update">
               {{ resolvePostDate(page.frontmatter.update) }}
             </time>
           </div>
           <div v-if="page.frontmatter.author" class="author ml-3">
             <span class="name">
-              <i class="fa fa-user"></i>
+              <faIcon icon="user" />
               <router-link :to="`/author/${page.frontmatter.author}`">{{ page.frontmatter.author }}</router-link>
             </span>
             <span v-if="page.frontmatter.location" class="location">

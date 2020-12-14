@@ -2,7 +2,9 @@
   <div class="component-sns-links">
     <ul class="my-0 d-flex" :style="{'font-size': fontSize}">
       <li v-for="item in sns" :style="{'margin-right': marginSize}">
-        <a :href="item.url" target="_blank"><i :class="item.class"></i></a>
+        <a :href="item.url" target="_blank">
+          <faIcon :icon="item.icon"></faIcon>
+        </a>
       </li>
     </ul>
   </div>
@@ -28,13 +30,13 @@
       sns: {},
     }),
     created() {
-      const faClasses = {
-        twitter: 'fab fa-twitter',
-        facebook: 'fab fa-facebook-square',
-        instagram: 'fab fa-instagram',
-        github: 'fab fa-github',
-        youtube: 'fab fa-youtube',
-        feed: 'fa fa-rss',
+      const icons = {
+        twitter: ['fab', 'twitter'],
+        facebook: ['fab', 'facebook-square'],
+        instagram: ['fab', 'instagram'],
+        github: ['fab', 'github'],
+        youtube: ['fab', 'youtube'],
+        feed: 'rss',
       }
 
       const orders = this.$themeConfig.sns.order
@@ -43,7 +45,7 @@
       delete sns.order
 
       sns = transform(sns, (result, value, key) => {
-        result.push({type: key, url: value, class: faClasses[key]})
+        result.push({type: key, url: value, icon: icons[key]})
       }, [])
 
       sns = pickBy(sns, item => !!item.url)
