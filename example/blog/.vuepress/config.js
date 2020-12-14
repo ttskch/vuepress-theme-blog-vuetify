@@ -13,7 +13,7 @@ module.exports = {
     globalPagination: {
       lengthPerPage: 3,
     },
-    titleHtml: `<i class="far fa-edit mr-2"></i><strong>vuepress-theme-blog-vuetify</strong>`,
+    titleIcon: 'pencil-box-outline',
     sidebar: {
       profile: {
         avatarUrl: 'https://avatars2.githubusercontent.com/u/4360663?s=100',
