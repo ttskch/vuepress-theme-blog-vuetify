@@ -6,7 +6,7 @@
     "build": "vuepress build blog"
   },
   "devDependencies": {
-    "vuepress": "^1.4.1",
+    "vuepress": "^1.7.1",
     "vuepress-theme-blog-vuetify": "^1"
   }
 }
